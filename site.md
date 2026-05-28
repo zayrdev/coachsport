@@ -26,7 +26,7 @@ Le site doit avoir un rendu **très premium, moderne, lumineux et mobile-first**
 - **HTML** statique (pas de framework JS)
 - **CSS** Vanilla (deux fichiers principaux)
 - **JavaScript** Vanilla (modules séparés)
-- **LocalStorage** pour le panier
+- **LocalStorage** pour le code promo QCM
 - **Google Fonts** : `Jost` + `Instrument Sans`
 - Pas de backend pour l'instant (Supabase prévu plus tard)
 
@@ -35,14 +35,13 @@ Le site doit avoir un rendu **très premium, moderne, lumineux et mobile-first**
 Le site utilise un **système modulaire** :
 
 1. **`js/site-data.js`** — Source de données centralisée (produits, navigation, FAQ)
-2. **`js/layout.js`** — Injecte dynamiquement le header, footer et cart drawer dans les `<div>` placeholders
+2. **`js/layout.js`** — Injecte dynamiquement le header et footer dans les `<div>` placeholders
 3. **`js/navigation.js`** — Gère les dropdowns desktop, menu mobile, scroll header
 
 Chaque page HTML contient trois `<div>` vides que `layout.js` remplit au chargement :
 ```html
 <div id="site-header"></div>   <!-- Header + nav + menu mobile -->
 <div id="site-footer"></div>   <!-- Footer complet -->
-<div id="site-cart"></div>     <!-- Cart drawer + overlay -->
 ```
 
 ### Attributs requis sur chaque page
@@ -76,8 +75,7 @@ coachsport/
 ├── reserver-appel.html     # Réservation appel gratuit (UI only)
 ├── compte.html             # Mon compte (login/register/dashboard, UI only)
 ├── programmes.html         # Liste tous les programmes
-├── paiement.html           # Fiche produit détaillée (dynamique via ?id=xxx)
-├── panier.html             # Page panier complète
+├── produit.html            # Fiche produit détaillée (dynamique via ?id=xxx)
 ├── faq.html                # FAQ complète
 ├── contact.html            # Page contact
 ├── en-construction.html    # Page placeholder pour pages légales
@@ -86,7 +84,7 @@ coachsport/
 ├── fitmass.css             # Thème premium principal (inspiré Fitmass)
 ├── script.js               # Logique globale (reveal, scroll, promo modal)
 ├── qcm.js                  # Quiz "Trouvez votre programme" (15 questions)
-├── cart.js                  # Logique panier (LocalStorage)
+├── cart.js                 # Checkout Stripe direct (pas de panier)
 │
 ├── js/
 │   ├── site-data.js        # Données centralisées (produits, nav, FAQ)
@@ -154,14 +152,13 @@ Le menu principal a **5 onglets** :
 
 ---
 
-## 🛒 SYSTÈME PANIER
+## � SYSTÈME DE PAIEMENT (Checkout Direct)
 
-- **Stockage** : `localStorage` clé `coachsport_cart`
-- **Format** : `[{ id, title, price, img, quantity }]`
-- **Cart drawer** : panneau latéral avec overlay
-- **Page panier** : `panier.html` avec tableau récapitulatif
-- **Code promo** : `MEHDI10` (champ dans le drawer, logique à finaliser)
-- **Fonctions globales** : `addToCart()`, `buyNow()`, `removeFromCart()`, `updateQuantity()`
+- **Mode** : Checkout Stripe direct (pas de panier)
+- **Promo code** : Stocké dans `localStorage` clé `coachsport_promo_code` (débloqué via QCM)
+- **Fonction globale** : `buyNow(id, title, price, img)` → redirection Stripe immédiate
+- **Pages de résultat** : `success.html` (paiement réussi) / `cancel.html` (annulation)
+- **Redirections Stripe** : Configurées dans `server.js` (success_url / cancel_url)
 
 ---
 
@@ -262,11 +259,11 @@ Le menu principal a **5 onglets** :
 - [x] FAQ reformulée sans mention femmes
 - [x] Tous les textes orientés hommes
 
-### Système panier
-- [x] Cart drawer avec overlay
-- [x] Page panier `panier.html`
-- [x] Boutons acheter/ajouter globaux via `product-actions.js`
-- [x] Code promo dans le drawer
+### Système de paiement (Checkout Direct)
+- [x] Checkout Stripe direct (pas de panier)
+- [x] Boutons acheter globaux via `product-actions.js`
+- [x] Code promo QCM (débloqué dans `localStorage`)
+- [x] Pages de résultat Stripe (`success.html` / `cancel.html`)
 
 ### Footer
 - [x] Footer premium avec 4 colonnes (programmes, accompagnement, légal, marque)
