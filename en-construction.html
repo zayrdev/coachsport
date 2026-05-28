@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>En construction – Mehdi Coaching</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fitmass.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Jost:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body data-layout="fitmass">
+  <div id="site-header"></div>
+  <main class="fm-section">
+    <div class="container" style="max-width:560px;text-align:center;padding:80px 24px">
+      <p class="label-tag">Bientôt disponible</p>
+      <h1 class="section-title" id="constructionTitle" style="font-size:2rem;margin-bottom:16px">Page en construction</h1>
+      <p class="section-sub" style="margin-bottom:32px">Cette section arrive prochainement. En attendant, découvrez nos programmes ou contactez Mehdi.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="programmes.html" class="btn btn-brand">Voir les programmes</a>
+        <a href="index.html#contact" class="btn btn-outline">Retour à l'accueil</a>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <div id="site-cart"></div>
+  <script src="js/site-data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="cart.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const titles = {
+      guides: 'Guides gratuits',
+      musculation: 'Musculation',
+      complements: 'Compléments',
+      coachings: 'Coachings',
+      compte: 'Mon compte'
+    };
+    const p = new URLSearchParams(location.search).get('page');
+    if (p && titles[p]) {
+      document.getElementById('constructionTitle').textContent = titles[p] + ' — en construction';
+      document.title = titles[p] + ' – Mehdi Coaching';
+    }
+  </script>
+</body>
+</html>

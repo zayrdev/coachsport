@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mes Accompagnements – Mehdi Coaching</title>
+  <meta name="description" content="Coaching en ligne et coaching en présentiel par Mehdi. Accompagnement personnalisé pour atteindre vos objectifs physiques." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fitmass.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    .accomp-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .accomp-compare-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      text-align: center;
+      transition: var(--fm-ease);
+    }
+    .accomp-compare-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+    .accomp-compare-card.featured {
+      border: 2px solid var(--text-main);
+    }
+    .accomp-compare-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .accomp-compare-card .price {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 16px 0 4px;
+    }
+    .accomp-compare-card .price-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .accomp-compare-card ul {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .accomp-compare-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 7px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .accomp-compare-card ul li:last-child { border-bottom: none; }
+    .accomp-compare-card ul li svg { flex-shrink: 0; margin-top: 2px; color: #22c55e; }
+    .accomp-process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .accomp-process-step {
+      text-align: center;
+      padding: 28px 20px;
+    }
+    .accomp-process-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--text-main);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .accomp-process-step h3 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .accomp-process-step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 749px) {
+      .accomp-compare { grid-template-columns: 1fr; }
+      .accomp-process { grid-template-columns: 1fr; }
+    }
+    /* Premium description styles */
+    .accomp-lead {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+    .accomp-section-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.85rem;
+    }
+    /* Images fully visible — no crop, no black bands */
+    .fm-media-frame--auto {
+      aspect-ratio: unset;
+      background: transparent;
+    }
+    .fm-media-frame--auto img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+  </style>
+</head>
+<body data-layout="fitmass">
+
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="fm-page-hero">
+      <div class="container">
+        <p class="fm-breadcrumb"><a href="index.html">Accueil</a> / Mes accompagnements</p>
+        <p class="label-tag">ACCOMPAGNEMENT PERSONNALISÉ</p>
+        <h1>Mes Accompagnements</h1>
+        <p class="fm-page-hero__lead">Un suivi sur-mesure adapté à ton niveau, tes objectifs et ton mode de vie. En ligne ou en présentiel — Mehdi t'accompagne jusqu'aux résultats.</p>
+      </div>
+    </section>
+
+    <!-- COACHING PRÉSENTIEL -->
+    <section class="fm-section" id="presentiel">
+      <div class="container">
+        <div class="fm-two-col fm-two-col--reverse">
+          <div class="fm-two-col__media" data-reveal>
+            <div class="fm-media-frame fm-media-frame--auto">
+              <img src="images/coaching présentiel.jpg" alt="Coaching en présentiel" />
+            </div>
+          </div>
+          <div class="fm-two-col__content" data-reveal>
+            <div class="fm-badge-inline">EN PRÉSENTIEL</div>
+            <h2>Coaching Sportif en Présentiel</h2>
+            <p class="accomp-lead">L'accompagnement complet pour des résultats concrets</p>
+            <p style="color:var(--text-muted);margin-bottom:16px;line-height:1.8;">Tu veux aller plus loin, plus vite, et surtout de la bonne façon ? Le coaching en présentiel, c'est l'expérience la plus complète que je propose. Je suis à tes côtés à chaque répétition, chaque série, chaque effort — pour que tu ne sois jamais seul face à tes objectifs.</p>
+            <p class="accomp-section-title">Une flexibilité totale adaptée à ta vie</p>
+            <p style="color:var(--text-muted);margin-bottom:16px;line-height:1.8;">Choisis le rythme qui te correspond : de 1 à 6 séances par semaine, selon tes objectifs, ta disponibilité et ton niveau. Que tu débutes ou que tu cherches à repousser tes limites, on construit ensemble un planning qui s'intègre naturellement à ton quotidien.</p>
+            <p class="accomp-section-title">Ce qui est inclus dans ton accompagnement</p>
+            <ul class="fm-feature-list" style="margin-bottom: 16px;">
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Présence totale à chaque séance, corrections techniques en temps réel</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Gestion complète des temps de repos, de l'intensité et de la progression</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Programme d'entraînement en musculation entièrement personnalisé</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Programme nutritionnel offert et adapté à tes objectifs</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Disponibilité quotidienne en ligne pour toutes tes questions</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Suivi nutritionnel journalier pour manger en accord avec tes objectifs</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Bilan hebdomadaire avec pesée pour mesurer ta progression</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Motivation constante pour te pousser à donner le meilleur de toi-même</span></li>
+            </ul>
+            <p style="color:var(--text-muted);margin-bottom:28px;line-height:1.8;font-style:italic;">Parce que c'est la formule la plus complète. Tu n'es jamais seul face à tes doutes ou à tes efforts. Je gère tout pour toi — l'entraînement, la nutrition, le suivi, la motivation — pour que toi tu n'aies qu'une seule chose à faire : performer.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="produit.html?id=coaching-presentiel" class="btn btn-brand btn-large">Voir l'accompagnement</a>
+              <button type="button" class="btn btn-outline btn-large btn-buy-now" data-id="coaching-presentiel" data-title="Coaching en présentiel" data-price="100" data-img="images/coaching présentiel.jpg">Acheter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACHING EN LIGNE -->
+    <section class="fm-section" id="en-ligne" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="fm-two-col">
+          <div class="fm-two-col__media" data-reveal>
+            <div class="fm-media-frame fm-media-frame--auto">
+              <img src="images/coaching en ligne.jpg" alt="Coaching en ligne" />
+            </div>
+          </div>
+          <div class="fm-two-col__content" data-reveal>
+            <div class="fm-badge-inline">EN LIGNE</div>
+            <h2>Coaching Sportif en Ligne</h2>
+            <p class="accomp-lead">Un accompagnement sérieux, où que tu sois</p>
+            <p style="color:var(--text-muted);margin-bottom:16px;line-height:1.8;">Tu veux progresser mais le présentiel ne correspond pas à ton rythme de vie ? Le coaching en ligne, c'est la formule pensée pour ceux qui ont besoin de flexibilité sans sacrifier la qualité du suivi. Peu importe où tu te trouves, je suis là.</p>
+            <p class="accomp-section-title">Un suivi complet, entièrement à distance</p>
+            <p style="color:var(--text-muted);margin-bottom:16px;line-height:1.8;">Tu reçois un programme de musculation entièrement adapté à ta situation ainsi qu'un programme nutritionnel compris dans la formule, tous deux ajustés en continu selon ta progression, tes retours et les évolutions de ta vie. Si tu pars en vacances, si ton emploi du temps change ou si tu traverses une période particulière, le programme s'adapte — rien n'est figé.</p>
+            <p class="accomp-section-title">Un programme pensé pour toi, pas pour tout le monde</p>
+            <p style="color:var(--text-muted);margin-bottom:16px;line-height:1.8;">Ton programme est construit selon ton emploi du temps, tes contraintes et surtout l'endroit où tu t'entraînes. Que ce soit en salle, à la maison au poids du corps, en street workout ou ailleurs — le programme est entièrement pensé autour de ta réalité, pas d'une réalité idéale.</p>
+            <p class="accomp-section-title">Une présence quotidienne, pas juste hebdomadaire</p>
+            <ul class="fm-feature-list" style="margin-bottom: 16px;">
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Disponible 24h/24 pour toutes tes questions (nutrition, entraînement, technique)</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Suivi nutritionnel journalier concret et régulier</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>1 à 5 appels de mise au point par semaine (téléphonique ou vidéo)</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Bilan hebdomadaire avec pesée pour mesurer ta progression</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Programme ajusté en continu selon ta vie et tes résultats</span></li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Accessible depuis n'importe où dans le monde</span></li>
+            </ul>
+            <p style="color:var(--text-muted);margin-bottom:28px;line-height:1.8;font-style:italic;">Parce que la distance ne doit jamais être un obstacle à tes résultats. Avec ce suivi, tu as tout ce qu'il faut pour progresser sérieusement — un vrai programme, une vraie nutrition, et quelqu'un de disponible chaque jour pour t'accompagner jusqu'au bout.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="produit.html?id=coaching-ligne" class="btn btn-brand btn-large">Voir l'accompagnement</a>
+              <button type="button" class="btn btn-outline btn-large btn-buy-now" data-id="coaching-ligne" data-title="Coaching en ligne" data-price="75" data-img="images/coaching en ligne.jpg">Acheter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARAISON -->
+    <section class="fm-section" style="background:#fff;">
+      <div class="container">
+        <div class="fm-section-head">
+          <h2>Quel accompagnement choisir ?</h2>
+          <p>Les deux formules sont personnalisées et donnent des résultats. La différence, c'est le format.</p>
+        </div>
+        <div class="accomp-compare">
+          <div class="accomp-compare-card">
+            <div class="fm-badge-inline">EN LIGNE</div>
+            <h3>Coaching en ligne</h3>
+            <div class="price">à partir de 75 €<span style="font-size:1rem;font-weight:400;color:var(--text-muted)">/mois</span></div>
+            <p class="price-note">Accessible depuis partout</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Programme sur-mesure</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Appel hebdomadaire</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Suivi par message</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Liberté d'horaires</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Accessible depuis n'importe où</li>
+            </ul>
+            <button type="button" class="btn btn-outline btn-full btn-buy-now" data-id="coaching-ligne" data-title="Coaching en ligne" data-price="75" data-img="images/coaching en ligne.jpg">Acheter</button>
+          </div>
+          <div class="accomp-compare-card featured">
+            <div class="fm-badge-inline" style="background:var(--text-main);color:#fff;">EN PRÉSENTIEL</div>
+            <h3>Coaching en présentiel</h3>
+            <div class="price">à partir de 100 €<span style="font-size:1rem;font-weight:400;color:var(--text-muted)">/mois</span></div>
+            <p class="price-note">Encadrement direct en salle</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Programme sur-mesure</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Séances en direct avec Mehdi</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Correction technique immédiate</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Motivation maximale</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Progression accélérée</li>
+            </ul>
+            <button type="button" class="btn btn-brand btn-full btn-buy-now" data-id="coaching-presentiel" data-title="Coaching en présentiel" data-price="100" data-img="images/coaching présentiel.jpg">Acheter</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section class="fm-section" style="background:var(--bg-secondary);">
+      <div class="container">
+        <div class="fm-section-head">
+          <h2>Comment ça se passe ?</h2>
+          <p>Un processus simple, du premier contact aux premiers résultats.</p>
+        </div>
+        <div class="accomp-process">
+          <div class="accomp-process-step" data-reveal>
+            <div class="accomp-process-num">1</div>
+            <h3>Appel découverte</h3>
+            <p>On fait le point ensemble sur tes objectifs, ton niveau, tes contraintes et tes disponibilités. Gratuit et sans engagement.</p>
+          </div>
+          <div class="accomp-process-step" data-reveal>
+            <div class="accomp-process-num">2</div>
+            <h3>Programme sur-mesure</h3>
+            <p>Mehdi construit ton programme d'entraînement et tes conseils nutrition en fonction de ton profil. Rien de générique.</p>
+          </div>
+          <div class="accomp-process-step" data-reveal>
+            <div class="accomp-process-num">3</div>
+            <h3>Suivi et résultats</h3>
+            <p>On ajuste semaine après semaine selon ta progression. Les résultats arrivent avec la régularité et la méthode.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section cta-final">
+      <div class="container">
+        <div class="cta-box" data-reveal>
+          <h2 class="cta-title">Pas sûr de quel coaching choisir ?</h2>
+          <p class="cta-sub">Réserve un appel gratuit avec Mehdi. On fait le point ensemble et on trouve la meilleure option pour toi.</p>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="reserver-appel.html" class="btn btn-brand btn-large">Réserver un appel gratuit</a>
+            <a href="contact.html" class="btn btn-outline btn-large">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-cart"></div>
+
+  <script src="js/site-data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="cart.js"></script>
+  <script src="js/product-actions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Détails – Mehdi Coaching</title>
+  <meta name="description" content="Découvrez les détails du programme Mehdi Coaching." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fitmass.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── PDP Layout ── */
+    .pdp-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero image */
+    .pdp-hero {
+      position: relative;
+      width: 100%;
+      background: var(--bg-secondary);
+      overflow: hidden;
+    }
+    .pdp-hero img {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .pdp-hero-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.82) 100%);
+      pointer-events: none;
+    }
+    .pdp-hero-copy {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0 24px 32px;
+      color: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pdp-hero-copy .pdp-crumb {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
+    .pdp-hero-copy .pdp-crumb a { color: #fff; text-decoration: underline; }
+    .pdp-hero-copy .pdp-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    .pdp-hero-copy h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .pdp-hero-copy .pdp-subtitle {
+      font-size: 1.05rem;
+      opacity: 0.88;
+    }
+
+    /* Buy block */
+    .pdp-buy-block {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 36px 24px;
+    }
+    .pdp-buy-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .pdp-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .pdp-price {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .pdp-price-old {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    .pdp-price-save {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #c41e3a;
+      background: #fff0f0;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .pdp-buy-lead {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+    .pdp-buy-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 240px;
+    }
+    .pdp-buy-actions .btn {
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 1rem;
+    }
+    .pdp-buy-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* Benefits strip */
+    .pdp-benefits-strip {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px;
+    }
+    .pdp-benefits-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 32px;
+    }
+    .pdp-benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .pdp-benefit-item svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #22c55e;
+    }
+
+    /* Content body */
+    .pdp-content {
+      padding: 48px 24px 64px;
+      background: #fff;
+    }
+    .pdp-content-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .pdp-content-inner h2 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 2.5rem 0 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .pdp-content-inner h2:first-child { margin-top: 0; }
+    .pdp-content-inner p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Second image block */
+    .pdp-img2-block {
+      padding: 0 24px 48px;
+      background: #fff;
+    }
+    .pdp-img2-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .pdp-img2-frame {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-secondary);
+    }
+    .pdp-img2-frame img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* CTA bottom */
+    .pdp-cta-bottom {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .pdp-cta-bottom h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .pdp-cta-bottom p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+    }
+    .pdp-cta-bottom .pdp-cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Mobile sticky bar */
+    .pdp-sticky {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 1090;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+      display: none;
+    }
+    .pdp-sticky-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .pdp-sticky-actions .btn {
+      flex: 1;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+    }
+
+    /* Tags */
+    .pdp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .pdp-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 749px) {
+      .pdp-buy-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .pdp-buy-actions { min-width: unset; }
+      .pdp-benefits-grid { grid-template-columns: 1fr; }
+      .pdp-sticky { display: block; }
+      .pdp-buy-block { display: none; }
+    }
+    @media (min-width: 750px) {
+      .pdp-hero-copy {
+        padding: 0 32px 48px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 900px;
+      }
+    }
+  </style>
+</head>
+<body data-layout="fitmass">
+
+  <div id="site-header"></div>
+
+  <main id="productContainer">
+    <div style="text-align:center; padding: 120px 24px;">
+      <p style="color:var(--text-muted)">Chargement...</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-cart"></div>
+
+  <script src="js/site-data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="cart.js"></script>
+  <script src="js/product-actions.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+      const product = window.SITE && window.SITE.getProduct(productId);
+      const container = document.getElementById('productContainer');
+
+      if (!product) {
+        container.innerHTML = `
+          <div style="text-align:center; padding: 120px 24px;">
+            <h2 style="font-family:var(--font-heading);margin-bottom:16px;">Produit introuvable</h2>
+            <a href="programmes.html" class="btn btn-brand">Voir les programmes</a>
+          </div>`;
+        return;
+      }
+
+      document.title = product.title + ' – Mehdi Coaching';
+
+      const isCoaching = product.category === 'coaching';
+      const save = product.compareAt ? Math.round((1 - product.price / product.compareAt) * 100) : 0;
+      const attrs = `data-id="${product.id}" data-title="${product.title.replace(/"/g, '&quot;')}" data-price="${product.price}" data-img="${product.img}"`;
+
+      // Boutons selon catégorie
+      const buyBlockActions = isCoaching
+        ? `<button type="button" class="btn btn-brand btn-buy-now" ${attrs} style="min-width:200px;">Payer — ${product.price} €/mois</button>`
+        : `<button type="button" class="btn btn-brand btn-buy-now" ${attrs}>Acheter maintenant</button>`;
+
+      const ctaActions = isCoaching
+        ? `<button type="button" class="btn btn-brand btn-large btn-buy-now" ${attrs}>Payer — ${product.price} €/mois</button>`
+        : `<button type="button" class="btn btn-brand btn-large btn-buy-now" ${attrs}>Acheter — ${product.price} €</button>`;
+
+      const stickyActions = isCoaching
+        ? `<button type="button" class="btn btn-brand btn-buy-now" ${attrs} style="flex:1;">Payer — ${product.price} €/mois</button>`
+        : `<button type="button" class="btn btn-brand btn-buy-now" ${attrs}>Acheter — ${product.price} €</button>`;
+
+      // Breadcrumb
+      const breadcrumbHref = isCoaching ? 'accompagnements.html' : (product.category === 'nutrition' ? 'pack-nutrition.html' : 'programmes.html');
+      const breadcrumbLabel = isCoaching ? 'Accompagnements' : (product.category === 'nutrition' ? 'Pack Nutrition' : 'Programmes');
+      const benefitsHtml = (product.benefits || []).map(b => `
+        <div class="pdp-benefit-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>${b}</span>
+        </div>`).join('');
+
+      // Tags HTML
+      const tagsHtml = (product.tags || []).map(t => `<span class="pdp-tag">${t}</span>`).join('');
+
+      // Long description or fallback
+      const longDesc = product.longDescription || (product.details ? `<p>${product.details}</p>` : '<p>Programme complet et structuré pour atteindre vos objectifs.</p>');
+
+      // ── COACHING : landing page premium ──
+      if (isCoaching) {
+        const img2 = product.img2 || product.img;
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = longDesc;
+        const h2s = tempDiv.querySelectorAll('h2');
+        const sections = [];
+        h2s.forEach(h2 => {
+          const title = h2.textContent;
+          const paras = [];
+          let next = h2.nextElementSibling;
+          while (next && next.tagName !== 'H2') { paras.push(next.outerHTML); next = next.nextElementSibling; }
+          sections.push({ title, content: paras.join('') });
+        });
+        const block1 = sections.slice(0, 2).map(s => `<h3 class="clp-block-title">${s.title}</h3>${s.content}`).join('');
+        const block2 = sections.slice(2).map(s => `<h3 class="clp-block-title">${s.title}</h3>${s.content}`).join('');
+        const benefitItems = (product.benefits || []).map(b => `<li class="clp-benefit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>${b}</span></li>`).join('');
+
+        container.innerHTML = buildCoachingLP(product, attrs, breadcrumbHref, breadcrumbLabel, img2, block1, block2, benefitItems);
+        if (typeof window.bindProductActions === 'function') window.bindProductActions(container);
+        return;
+      }
+
+      // ── PROGRAMMES & NUTRITION : layout standard ──
+      const img2Html = product.img2 ? `
+        <div class="pdp-img2-block"><div class="pdp-img2-inner"><div class="pdp-img2-frame">
+          <img src="${product.img2}" alt="${product.title} — aperçu" />
+        </div></div></div>` : '';
+
+      container.innerHTML = `
+        <div class="pdp-hero">
+          <img src="${product.img}" alt="${product.title}" />
+          <div class="pdp-hero-shade"></div>
+          <div class="pdp-hero-copy">
+            <p class="pdp-crumb"><a href="index.html">Accueil</a> / <a href="${breadcrumbHref}">${breadcrumbLabel}</a> / ${product.title}</p>
+            <span class="pdp-badge">${product.badge}</span>
+            <h1>${product.title}</h1>
+            <p class="pdp-subtitle">${product.subtitle}</p>
+            <div class="pdp-tags">${tagsHtml}</div>
+          </div>
+        </div>
+        <div class="pdp-buy-block">
+          <div class="pdp-buy-inner">
+            <div>
+              <div class="pdp-price-row">
+                <span class="pdp-price">${product.price} €</span>
+                ${product.compareAt ? `<span class="pdp-price-old">${product.compareAt} €</span><span class="pdp-price-save">-${save} %</span>` : ''}
+              </div>
+              <p class="pdp-buy-lead">${product.details || product.subtitle}</p>
+            </div>
+            <div class="pdp-buy-actions">
+              ${buyBlockActions}
+              <p class="pdp-buy-note">Accès immédiat · Paiement sécurisé</p>
+            </div>
+          </div>
+        </div>
+        ${benefitsHtml ? `<div class="pdp-benefits-strip"><div class="pdp-benefits-grid">${benefitsHtml}</div></div>` : ''}
+        <div class="pdp-content"><div class="pdp-content-inner">${longDesc}</div></div>
+        ${img2Html}
+        <div class="pdp-cta-bottom">
+          <h2>Prêt à commencer ?</h2>
+          <p>Rejoins les centaines de clients qui ont déjà transformé leur physique avec Mehdi.</p>
+          <div class="pdp-cta-actions">${ctaActions}</div>
+        </div>
+        <div class="pdp-sticky"><div class="pdp-sticky-actions">${stickyActions}</div></div>
+      `;
+
+      if (typeof window.bindProductActions === 'function') window.bindProductActions(container);
+    });
+
+    function buildCoachingLP(p, attrs, breadcrumbHref, breadcrumbLabel, img2, block1, block2, benefitItems) {
+      return `
+      <style>
+        .clp { background:#fff; }
+        .clp-hero { position:relative; width:100%; min-height:80vh; display:flex; align-items:flex-end; overflow:hidden; background:var(--bg-secondary); }
+        .clp-hero__img { position:absolute; inset:0; z-index:0; }
+        .clp-hero__img img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+        .clp-hero__overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.88) 100%); z-index:1; }
+        .clp-hero__content { position:relative; z-index:2; width:100%; max-width:1200px; margin:0 auto; padding:0 24px 64px; color:#fff; }
+        .clp-hero__crumb { font-size:.8rem; opacity:.75; margin-bottom:16px; }
+        .clp-hero__crumb a { color:#fff; text-decoration:underline; }
+        .clp-hero__badge { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.35); padding:6px 16px; border-radius:100px; margin-bottom:20px; }
+        .clp-hero h1 { font-family:var(--font-heading); font-size:clamp(2.2rem,6vw,4rem); font-weight:800; line-height:1.05; letter-spacing:-.03em; margin-bottom:16px; max-width:18ch; }
+        .clp-hero__sub { font-size:clamp(1rem,2.5vw,1.2rem); opacity:.88; margin-bottom:32px; max-width:42ch; line-height:1.6; }
+        .clp-hero__tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
+        .clp-hero__tag { font-size:.78rem; font-weight:600; padding:6px 14px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.28); border-radius:100px; color:#fff; }
+        .clp-hero__cta { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+        .clp-hero__price { font-family:var(--font-heading); font-size:1.1rem; font-weight:700; color:rgba(255,255,255,.9); }
+        .clp-trust { background:#111; color:#fff; padding:20px 24px; }
+        .clp-trust-inner { max-width:1200px; margin:0 auto; display:flex; gap:32px; justify-content:center; flex-wrap:wrap; }
+        .clp-trust-item { display:flex; align-items:center; gap:10px; font-size:.88rem; font-weight:600; letter-spacing:.02em; }
+        .clp-split { padding:80px 24px; }
+        .clp-split--dark { background:var(--bg-secondary); }
+        .clp-split-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+        .clp-split--reverse .clp-split-inner { direction:rtl; }
+        .clp-split--reverse .clp-split-inner > * { direction:ltr; }
+        .clp-split__media { border-radius:16px; overflow:hidden; background:var(--bg-secondary); }
+        .clp-split__media img, .clp-split__media video { width:100%; height:auto; display:block; }
+        .clp-split__eyebrow { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; }
+        .clp-split__content h2 { font-family:var(--font-heading); font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; letter-spacing:-.02em; line-height:1.1; margin-bottom:20px; }
+        .clp-split__content p { color:var(--text-muted); font-size:1rem; line-height:1.8; margin-bottom:16px; }
+        .clp-block-title { font-family:var(--font-heading); font-size:1.1rem; font-weight:700; margin:20px 0 8px; color:var(--text-main); }
+        .clp-block-title:first-child { margin-top:0; }
+        .clp-benefits { list-style:none; padding:0; margin:24px 0 32px; display:grid; gap:12px; }
+        .clp-benefit { display:flex; align-items:flex-start; gap:12px; font-size:.95rem; line-height:1.5; }
+        .clp-benefit svg { flex-shrink:0; margin-top:2px; color:#22c55e; }
+        .clp-buy { display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-top:8px; }
+        .clp-buy__price { font-family:var(--font-heading); font-size:2rem; font-weight:800; }
+        .clp-buy__note { font-size:.82rem; color:var(--text-muted); margin-top:4px; }
+        .clp-process { padding:80px 24px; background:#111; color:#fff; }
+        .clp-process-inner { max-width:1000px; margin:0 auto; }
+        .clp-process h2 { font-family:var(--font-heading); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:800; text-align:center; margin-bottom:12px; }
+        .clp-process__sub { text-align:center; color:rgba(255,255,255,.65); margin-bottom:56px; font-size:1.05rem; }
+        .clp-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+        .clp-step { text-align:center; }
+        .clp-step-num { width:56px; height:56px; border-radius:50%; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:#fff; font-family:var(--font-heading); font-weight:800; font-size:1.3rem; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
+        .clp-step h3 { font-family:var(--font-heading); font-size:1.1rem; font-weight:700; margin-bottom:10px; }
+        .clp-step p { font-size:.9rem; color:rgba(255,255,255,.65); line-height:1.6; }
+        .clp-cta { padding:80px 24px; background:var(--bg-secondary); text-align:center; }
+        .clp-cta h2 { font-family:var(--font-heading); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:800; letter-spacing:-.02em; margin-bottom:16px; }
+        .clp-cta p { color:var(--text-muted); font-size:1.05rem; margin-bottom:36px; max-width:48ch; margin-left:auto; margin-right:auto; }
+        .clp-cta__actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+        .clp-sticky { position:fixed; bottom:0; left:0; right:0; z-index:1090; background:#fff; border-top:1px solid var(--border); padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px)); display:none; }
+        @media(max-width:899px){
+          .clp-split-inner { grid-template-columns:1fr; gap:40px; }
+          .clp-split--reverse .clp-split-inner { direction:ltr; }
+          .clp-steps { grid-template-columns:1fr; gap:24px; }
+          .clp-sticky { display:block; }
+        }
+      </style>
+      <div class="clp">
+        <div class="clp-hero">
+          <div class="clp-hero__img">
+            <img src="${p.img}" alt="${p.title}" />
+            <div class="clp-hero__overlay"></div>
+          </div>
+          <div class="clp-hero__content">
+            <p class="clp-hero__crumb"><a href="index.html">Accueil</a> / <a href="${breadcrumbHref}">${breadcrumbLabel}</a> / ${p.title}</p>
+            <span class="clp-hero__badge">${p.badge}</span>
+            <h1>${p.title}</h1>
+            <p class="clp-hero__sub">${p.subtitle} — Un accompagnement sur-mesure pour atteindre tes objectifs avec méthode.</p>
+            <div class="clp-hero__tags">${(p.tags||[]).map(t=>`<span class="clp-hero__tag">${t}</span>`).join('')}</div>
+            <div class="clp-hero__cta">
+              <button type="button" class="btn btn-brand btn-large btn-buy-now" ${attrs}>Payer — ${p.price} €/mois</button>
+              <span class="clp-hero__price">${p.price} €<span style="font-size:.85rem;font-weight:400;opacity:.75">/mois</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="clp-trust">
+          <div class="clp-trust-inner">
+            <div class="clp-trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Programme 100 % sur-mesure</div>
+            <div class="clp-trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Résultats dès les premières semaines</div>
+            <div class="clp-trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>+50 clients accompagnés</div>
+            <div class="clp-trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Paiement sécurisé</div>
+          </div>
+        </div>
+        <div class="clp-split">
+          <div class="clp-split-inner">
+            <div class="clp-split__media">
+              ${p.video ? `<video src="${p.video}" autoplay loop muted playsinline></video>` : `<img src="${p.img}" alt="${p.title}" />`}
+            </div>
+            <div class="clp-split__content">
+              <span class="clp-split__eyebrow">Pourquoi choisir ce coaching</span>
+              <h2>${p.title}</h2>
+              ${block1 || `<p>${p.details}</p>`}
+              <ul class="clp-benefits">${(p.benefits||[]).slice(0,4).map(b=>`<li class="clp-benefit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>${b}</span></li>`).join('')}</ul>
+              <div class="clp-buy">
+                <div>
+                  <div class="clp-buy__price">${p.price} €<span style="font-size:1rem;font-weight:400;color:var(--text-muted)">/mois</span></div>
+                  <div class="clp-buy__note">Paiement sécurisé · Sans engagement</div>
+                </div>
+                <button type="button" class="btn btn-brand btn-large btn-buy-now" ${attrs}>Payer maintenant</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clp-split clp-split--dark clp-split--reverse">
+          <div class="clp-split-inner">
+            <div class="clp-split__media"><img src="${img2}" alt="${p.title} — méthode" /></div>
+            <div class="clp-split__content">
+              <span class="clp-split__eyebrow">Ce que tu obtiens</span>
+              <h2>Tout ce dont tu as besoin pour progresser</h2>
+              <ul class="clp-benefits">${benefitItems}</ul>
+              ${block2 ? `<div>${block2}</div>` : ''}
+            </div>
+          </div>
+        </div>
+        <div class="clp-process">
+          <div class="clp-process-inner">
+            <h2>Comment ça se passe ?</h2>
+            <p class="clp-process__sub">Un processus simple, du premier contact aux premiers résultats.</p>
+            <div class="clp-steps">
+              <div class="clp-step"><div class="clp-step-num">1</div><h3>Appel découverte</h3><p>On fait le point sur tes objectifs, ton niveau et tes contraintes. Gratuit et sans engagement.</p></div>
+              <div class="clp-step"><div class="clp-step-num">2</div><h3>Programme sur-mesure</h3><p>Mehdi construit ton programme d'entraînement et tes conseils nutrition selon ton profil.</p></div>
+              <div class="clp-step"><div class="clp-step-num">3</div><h3>Suivi et résultats</h3><p>On ajuste semaine après semaine. Les résultats arrivent avec la régularité et la méthode.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="clp-cta">
+          <h2>Prêt à transformer ton physique ?</h2>
+          <p>Rejoins les centaines de clients qui ont déjà atteint leurs objectifs avec Mehdi.</p>
+          <div class="clp-cta__actions">
+            <button type="button" class="btn btn-brand btn-large btn-buy-now" ${attrs}>Payer — ${p.price} €/mois</button>
+          </div>
+        </div>
+        <div class="clp-sticky">
+          <button type="button" class="btn btn-brand btn-full btn-buy-now" ${attrs}>Payer — ${p.price} €/mois</button>
+        </div>
+      </div>`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paiement réussi – Mehdi Coaching</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fitmass.css" />
+  <style>
+    .result-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: 24px;
+    }
+    .result-icon {
+      font-size: 4rem;
+      color: #22c55e;
+      margin-bottom: 24px;
+    }
+    .result-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .result-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 500px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+  </style>
+</head>
+<body data-layout="fitmass">
+  <div id="site-header"></div>
+  <main class="result-page fade-in">
+    <div class="result-icon">✓</div>
+    <h1 class="result-title">Paiement réussi !</h1>
+    <p class="result-desc">Félicitations pour votre commande. Vous allez recevoir un email très prochainement avec vos accès pour démarrer votre transformation.</p>
+    <a href="index.html" class="btn btn-brand btn-large">Retour à l'accueil</a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/site-data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    // Empty cart since payment succeeded
+    localStorage.removeItem('coachsport_cart');
+    localStorage.removeItem('coachsport_promo_code');
+    localStorage.removeItem('coachsport_promo_id');
+  </script>
+</body>
+</html>

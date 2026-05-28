@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Mehdi Coaching</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fitmass.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Jost:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 12px;
+      background: var(--bg-secondary, #f8f8f8);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .social-link:hover {
+      background: var(--bg-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .calendly-placeholder {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    .calendly-header {
+      margin-bottom: 24px;
+    }
+    .calendly-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      background-color: var(--brand-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .calendly-placeholder h3 {
+      font-family: var(--font-heading);
+      margin-bottom: 8px;
+    }
+    @media(max-width: 768px) {
+      .fm-contact-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body data-layout="fitmass">
+  <div id="site-header"></div>
+  <main>
+    <section class="fm-page-hero">
+      <div class="container">
+        <p class="fm-breadcrumb"><a href="index.html">Accueil</a> / Contact</p>
+        <h1>Contact</h1>
+        <p style="color:var(--text-muted)">Une question sur un programme ou un accompagnement ? Contactez-nous ou réservez un appel.</p>
+      </div>
+    </section>
+    <section class="fm-section">
+      <div class="container fm-contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1000px;margin:0 auto">
+        
+        <div>
+          <h3 style="font-family:var(--font-heading);margin-bottom:16px">Mes Réseaux & Contact</h3>
+          <p style="color:var(--text-muted);margin-bottom:24px">Rejoignez la communauté et suivez mon contenu au quotidien, ou envoyez-moi un email.</p>
+          
+          <div class="social-links">
+            <a href="https://www.instagram.com/mehdimusculationn" target="_blank" rel="noopener" class="social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span>Instagram (@mehdimusculationn)</span>
+            </a>
+            <a href="https://www.tiktok.com/@mehdi.dtkw?_r=1&_t=ZN-96bzSB7J38Y" target="_blank" rel="noopener" class="social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+              <span>TikTok (@mehdi.dtkw)</span>
+            </a>
+            <a href="https://www.snapchat.com/@mehdi.dtkw" target="_blank" rel="noopener" class="social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.38c-.35.19-.79.19-1.14 0l-7.9-4.38a1 1 0 0 1-.53-.88v-9c0-.38.21-.71.53-.88l7.9-4.38c.35-.19.79-.19 1.14 0l7.9 4.38c.32.17.53.5.53.88v9z"></path></svg>
+              <span>Snapchat (@mehdi.dtkw)</span>
+            </a>
+            <a href="mailto:mehdidotk@gmail.com" class="social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>mehdidotk@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="calendly-placeholder">
+          <div class="calendly-header">
+            <div class="calendly-avatar">M</div>
+            <h3>Réserver un appel gratuit</h3>
+            <p style="color:var(--text-muted); font-size: 0.95rem;">Appel d'évaluation de 15 minutes</p>
+          </div>
+          
+          <div style="border: 1px dashed #ccc; padding: 40px 20px; border-radius: 8px; margin-bottom: 24px; background: #fafafa;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5" style="margin-bottom: 16px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <p style="color: #666; font-size: 0.9rem;">Calendrier de réservation interactif à venir (Intégration Calendly ou similaire).</p>
+          </div>
+          
+          <button type="button" class="btn btn-brand btn-full">Voir les créneaux disponibles</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <div id="site-cart"></div>
+  <script src="js/site-data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="cart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

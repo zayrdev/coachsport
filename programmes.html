@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mes programmes – Mehdi Coaching</title>
+  <meta name="description" content="Découvrez tous les programmes de musculation premium par Mehdi Coaching : SummerBody, -10 Kilos, Prise de Masse, Préparation MMA." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fitmass.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+</head>
+<body data-layout="fitmass">
+  <div id="site-header"></div>
+  <main>
+    <section class="fm-page-hero">
+      <div class="container">
+        <p class="fm-breadcrumb"><a href="index.html">Accueil</a> / Mes programmes</p>
+        <p class="label-tag">PROGRAMMES D'ENTRAÎNEMENT</p>
+        <h1>Mes programmes</h1>
+        <p class="fm-page-hero__lead">6 programmes d'entraînement premium conçus pour les hommes — perte de gras, prise de muscle, performance, football. Choisissez celui qui correspond à votre objectif.</p>
+      </div>
+    </section>
+
+    <!-- ALL PROGRAMS -->
+    <section class="fm-section fm-programs-page">
+      <div class="container">
+        <div class="fm-programs-grid" id="programsGrid"></div>
+      </div>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section class="fm-section" style="background:var(--bg-secondary);">
+      <div class="container">
+        <div class="fm-section-head">
+          <h2>Pourquoi ces programmes fonctionnent ?</h2>
+          <p>Chaque programme est conçu par Mehdi à partir de son expérience terrain et des principes scientifiques de l'entraînement.</p>
+        </div>
+        <div class="fm-steps">
+          <div class="fm-step" data-reveal>
+            <span class="fm-step-num">✓</span>
+            <h3>Méthode structurée</h3>
+            <p>Chaque programme est organisé semaine par semaine, avec une progression claire. Tu sais exactement quoi faire et pourquoi.</p>
+          </div>
+          <div class="fm-step" data-reveal>
+            <span class="fm-step-num">✓</span>
+            <h3>Adapté à tous les niveaux</h3>
+            <p>Débutant ou confirmé, les programmes s'adaptent à ton niveau. Pas besoin d'expérience préalable pour commencer.</p>
+          </div>
+          <div class="fm-step" data-reveal>
+            <span class="fm-step-num">✓</span>
+            <h3>Résultats prouvés</h3>
+            <p>Plus de 50 clients ont déjà suivi ces programmes avec des résultats concrets. Les témoignages parlent d'eux-mêmes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-final">
+      <div class="container">
+        <div class="cta-box" data-reveal>
+          <h2 class="cta-title">Pas sûr de quel programme choisir ?</h2>
+          <p class="cta-sub">Utilisez le quiz gratuit pour trouver le programme le plus adapté à vos objectifs.</p>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="index.html#programmes" class="btn btn-brand btn-large">Faire le quiz gratuit</a>
+            <a href="contact.html" class="btn btn-outline btn-large">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <div id="site-cart"></div>
+  <script src="js/site-data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="cart.js"></script>
+  <script src="js/product-actions.js"></script>
+  <script src="script.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => renderProductGrid('programsGrid'));</script>
+</body>
+</html>
