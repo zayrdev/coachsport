@@ -69,6 +69,7 @@
           </li>
           <li class="fm-nav-item"><a href="accompagnements.html" class="fm-nav-link">Mes accompagnements</a></li>
           <li class="fm-nav-item"><a href="pack-nutrition.html" class="fm-nav-link">Pack Nutrition</a></li>
+          <li class="fm-nav-item"><button type="button" class="fm-nav-link" data-calendly-popup style="background: none; border: none; font: inherit; color: inherit; cursor: pointer;">Réserver un appel gratuit</button></li>
           <li class="fm-nav-item"><a href="contact.html" class="fm-nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -106,6 +107,7 @@
       </details>
       <a href="accompagnements.html" class="fm-mobile-link">Mes accompagnements</a>
       <a href="pack-nutrition.html" class="fm-mobile-link">Pack Nutrition</a>
+      <button type="button" class="fm-mobile-link" data-calendly-popup style="background: none; border: none; font: inherit; color: inherit; cursor: pointer; text-align: left; width: 100%; padding: inherit;">Réserver un appel gratuit</button>
       <a href="contact.html" class="fm-mobile-link">Contact</a>
     </nav>
     <div class="fm-mobile-footer">
