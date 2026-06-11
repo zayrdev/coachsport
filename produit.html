@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
+  <title>MediCoaching | Programmes de musculation premium</title>
+  <meta name="description" content="Programmes de musculation premium pour hommes par MediCoaching. SummerBody, Prise de Masse, Perte de Poids." />
+  <link rel="canonical" href="https://www.medicoaching.fr/produit" />
+  <meta property="og:title" content="MediCoaching | Programmes de musculation premium" />
+  <meta property="og:description" content="Programmes de musculation premium pour hommes par MediCoaching. SummerBody, Prise de Masse, Perte de Poids." />
+  <meta property="og:url" content="https://www.medicoaching.fr/produit" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.medicoaching.fr/images/image-principale.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MediCoaching | Programmes de musculation premium" />
+  <meta name="twitter:description" content="Programmes de musculation premium pour hommes par MediCoaching. SummerBody, Prise de Masse, Perte de Poids." />
+  <meta name="twitter:image" content="https://www.medicoaching.fr/images/image-principale.webp" />
+  <!-- Google Analytics Placeholder -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Programme de Musculation MediCoaching",
+  "description": "Programme premium pour transformation physique.",
+  "brand": {
+    "@type": "Brand",
+    "name": "MediCoaching"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "price": "49.00",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Détails – Mehdi Coaching</title>
-  <meta name="description" content="Découvrez les détails du programme Mehdi Coaching." />
+  
+  
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="fitmass.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -326,7 +366,7 @@
         container.innerHTML = `
           <div style="text-align:center; padding: 120px 24px;">
             <h2 style="font-family:var(--font-heading);margin-bottom:16px;">Produit introuvable</h2>
-            <a href="programmes.html" class="btn btn-brand">Voir les programmes</a>
+            <a href="/programmes" class="btn btn-brand">Voir les programmes</a>
           </div>`;
         return;
       }
@@ -399,7 +439,7 @@
           <img src="${product.img}" alt="${product.title}" />
           <div class="pdp-hero-shade"></div>
           <div class="pdp-hero-copy">
-            <p class="pdp-crumb"><a href="index.html">Accueil</a> / <a href="${breadcrumbHref}">${breadcrumbLabel}</a> / ${product.title}</p>
+            <p class="pdp-crumb"><a href="/">Accueil</a> / <a href="${breadcrumbHref}">${breadcrumbLabel}</a> / ${product.title}</p>
             <span class="pdp-badge">${product.badge}</span>
             <h1>${product.title}</h1>
             <p class="pdp-subtitle">${product.subtitle}</p>
@@ -502,7 +542,7 @@
             <div class="clp-hero__overlay"></div>
           </div>
           <div class="clp-hero__content">
-            <p class="clp-hero__crumb"><a href="index.html">Accueil</a> / <a href="${breadcrumbHref}">${breadcrumbLabel}</a> / ${p.title}</p>
+            <p class="clp-hero__crumb"><a href="/">Accueil</a> / <a href="${breadcrumbHref}">${breadcrumbLabel}</a> / ${p.title}</p>
             <span class="clp-hero__badge">${p.badge}</span>
             <h1>${p.title}</h1>
             <p class="clp-hero__sub">${p.subtitle} — Un accompagnement sur-mesure pour atteindre tes objectifs avec méthode.</p>

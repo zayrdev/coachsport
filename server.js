@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const compression = require('compression');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const cors = require('cors');
 const path = require('path');
 
 const app = express();
-app.use(express.static(path.join(__dirname, '')));
+app.use(compression());
+app.use(express.static(path.join(__dirname, ''), { extensions: ['html'] }));
 app.use(express.json());
 app.use(cors());
 

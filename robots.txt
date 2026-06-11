@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /cancel
+Disallow: /success
+Sitemap: https://www.medicoaching.fr/sitemap.xml
